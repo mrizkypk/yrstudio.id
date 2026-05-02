@@ -5,7 +5,7 @@ const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
   "accent": "skyblue",
   "fontPair": "cormorant-inter",
   "heroVariant": "split",
-  "carouselStyle": "slideshow"
+  "carouselStyle": "mosaic"
 }/*EDITMODE-END*/;
 
 const ACCENT_MAP = {
