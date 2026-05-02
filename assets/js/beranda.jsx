@@ -154,7 +154,7 @@ function Beranda() {
         description="Dari prewedding hingga dokumentasi acara — kami merangkum momen jadi cerita yang bisa dibuka berkali-kali."
         images={FOTO_PORTFOLIO}
         carouselVariant={variant}
-        ctaHref="jasa-fotografer-ngawi/index.html"
+        ctaHref="/jasa-fotografer-ngawi/"
         ctaLabel="Lihat paket fotografer"
         specs={[
           { label: "Format", value: "Digital + Cetak" },
@@ -170,7 +170,7 @@ function Beranda() {
         description="Cinematic film yang menampilkan emosi, bukan sekadar urutan kejadian. Color grading dan scoring khas YR Studio."
         images={VIDEO_PORTFOLIO}
         carouselVariant={variant}
-        ctaHref="jasa-videografer-ngawi/index.html"
+        ctaHref="/jasa-videografer-ngawi/"
         ctaLabel="Lihat paket videografer"
         specs={[
           { label: "Resolusi", value: "4K · 24fps" },
@@ -186,7 +186,7 @@ function Beranda() {
         description="Aerial footage untuk hari pernikahan, music video, atau dokumentasi area. Sudah termasuk pilot berpengalaman."
         images={DRONE_PORTFOLIO}
         carouselVariant={variant}
-        ctaHref="jasa-sewa-drone-ngawi/index.html"
+        ctaHref="/jasa-sewa-drone-ngawi/"
         ctaLabel="Cek ketersediaan drone"
         specs={[
           { label: "Drone", value: "DJI Mavic series" },

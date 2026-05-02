@@ -21,10 +21,9 @@ const NAV_ITEMS = [
 // Resolve relative path based on current location depth
 function relPath(href, depth) {
   if (href.startsWith("http")) return href;
-  if (href === "/") return depth === 0 ? "index.html" : "../".repeat(depth) + "index.html";
-  // strip trailing slash, add /index.html
+  if (href === "/") return depth === 0 ? "/" : "../".repeat(depth);
   const clean = href.replace(/^\//, "").replace(/\/$/, "");
-  return (depth === 0 ? "" : "../".repeat(depth)) + clean + "/index.html";
+  return (depth === 0 ? "/" : "../".repeat(depth)) + clean + "/";
 }
 
 function Nav({ active, depth = 0 }) {
