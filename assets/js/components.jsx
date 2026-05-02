@@ -114,10 +114,69 @@ function Footer({ depth = 0 }) {
 
 }
 
+/* ========== Lightbox ========== */
+function Lightbox({ images, startIdx, onClose }) {
+  const [idx, setIdx] = useState(startIdx);
+  const total = images.length;
+  const go = (n) => setIdx((n + total) % total);
+
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight") go(idx + 1);
+      if (e.key === "ArrowLeft") go(idx - 1);
+    };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => { document.removeEventListener("keydown", onKey); document.body.style.overflow = ""; };
+  }, [idx]);
+
+  return (
+    <div
+      onClick={onClose}
+      style={{
+        position: "fixed", inset: 0, zIndex: 200,
+        background: "rgba(0,0,0,0.92)", display: "flex",
+        alignItems: "center", justifyContent: "center",
+      }}
+    >
+      <button onClick={onClose} aria-label="Tutup" style={{
+        position: "absolute", top: 20, right: 24, background: "none", border: "none",
+        color: "#fff", fontSize: 32, cursor: "pointer", lineHeight: 1,
+      }}>×</button>
+
+      <button onClick={(e) => { e.stopPropagation(); go(idx - 1); }} aria-label="Sebelumnya" style={{
+        position: "absolute", left: 16, background: "none", border: "none",
+        color: "#fff", fontSize: 28, cursor: "pointer", padding: "12px 16px",
+      }}>←</button>
+
+      <img
+        src={images[idx].src}
+        alt={images[idx].alt || ""}
+        onClick={(e) => e.stopPropagation()}
+        style={{ maxWidth: "90vw", maxHeight: "90vh", objectFit: "contain", display: "block" }}
+      />
+
+      <button onClick={(e) => { e.stopPropagation(); go(idx + 1); }} aria-label="Berikutnya" style={{
+        position: "absolute", right: 16, background: "none", border: "none",
+        color: "#fff", fontSize: 28, cursor: "pointer", padding: "12px 16px",
+      }}>→</button>
+
+      <div style={{
+        position: "absolute", bottom: 20, color: "rgba(255,255,255,0.5)",
+        fontSize: 13, fontFamily: "var(--mono, monospace)", letterSpacing: "0.05em",
+      }}>
+        {String(idx + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+      </div>
+    </div>
+  );
+}
+
 /* ========== Carousel ========== */
 function Carousel({ images, variant = "slideshow", interval = 4500, label, tall = false }) {
   const [idx, setIdx] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [lightbox, setLightbox] = useState(null);
   const total = images.length;
 
   useEffect(() => {
@@ -130,61 +189,70 @@ function Carousel({ images, variant = "slideshow", interval = 4500, label, tall 
 
   if (variant === "mosaic") {
     return (
-      <div className="carousel mosaic" aria-label={label}>
-        <div className="carousel-track">
-          {images.map((img, i) =>
-          <div key={i} className="carousel-slide active">
-              <img src={img.src} alt={img.alt || ""} loading="lazy" />
-            </div>
-          )}
+      <>
+        {lightbox !== null && <Lightbox images={images} startIdx={lightbox} onClose={() => setLightbox(null)} />}
+        <div className="carousel mosaic" aria-label={label}>
+          <div className="carousel-track">
+            {images.map((img, i) =>
+              <div key={i} className="carousel-slide active" onClick={() => setLightbox(i)} style={{ cursor: "zoom-in" }}>
+                <img src={img.src} alt={img.alt || ""} loading="lazy" />
+              </div>
+            )}
+          </div>
         </div>
-      </div>);
-
+      </>
+    );
   }
 
   if (variant === "filmstrip") {
     return (
-      <div className="carousel filmstrip" aria-label={label}>
-        <div className="carousel-track">
-          {images.map((img, i) =>
-          <div key={i} className="carousel-slide">
-              <img src={img.src} alt={img.alt || ""} loading="lazy" />
-            </div>
-          )}
+      <>
+        {lightbox !== null && <Lightbox images={images} startIdx={lightbox} onClose={() => setLightbox(null)} />}
+        <div className="carousel filmstrip" aria-label={label}>
+          <div className="carousel-track">
+            {images.map((img, i) =>
+              <div key={i} className="carousel-slide" onClick={() => setLightbox(i)} style={{ cursor: "zoom-in" }}>
+                <img src={img.src} alt={img.alt || ""} loading="lazy" />
+              </div>
+            )}
+          </div>
         </div>
-      </div>);
-
+      </>
+    );
   }
 
   // default slideshow
   return (
-    <div
-      className={"carousel" + (tall ? " tall" : "")}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      aria-label={label}>
-      
-      <div className="carousel-track">
-        {images.map((img, i) =>
-        <div key={i} className={"carousel-slide" + (i === idx ? " active" : "")} aria-hidden={i !== idx}>
-            <img src={img.src} alt={img.alt || ""} loading={i === 0 ? "eager" : "lazy"} />
-          </div>
-        )}
+    <>
+      {lightbox !== null && <Lightbox images={images} startIdx={lightbox} onClose={() => setLightbox(null)} />}
+      <div
+        className={"carousel" + (tall ? " tall" : "")}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        aria-label={label}>
+        <div className="carousel-track">
+          {images.map((img, i) =>
+            <div key={i} className={"carousel-slide" + (i === idx ? " active" : "")} aria-hidden={i !== idx}
+              onClick={() => setLightbox(i)} style={{ cursor: "zoom-in" }}>
+              <img src={img.src} alt={img.alt || ""} loading={i === 0 ? "eager" : "lazy"} />
+            </div>
+          )}
+        </div>
+        <div className="carousel-counter">
+          {String(idx + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
+        </div>
+        <div className="carousel-arrows">
+          <button className="carousel-arrow prev" onClick={(e) => { e.stopPropagation(); go(idx - 1); }} aria-label="Sebelumnya">←</button>
+          <button className="carousel-arrow next" onClick={(e) => { e.stopPropagation(); go(idx + 1); }} aria-label="Berikutnya">→</button>
+        </div>
+        <div className="carousel-dots">
+          {images.map((_, i) =>
+            <button key={i} className={"carousel-dot" + (i === idx ? " active" : "")} onClick={(e) => { e.stopPropagation(); setIdx(i); }} aria-label={`Slide ${i + 1}`} />
+          )}
+        </div>
       </div>
-      <div className="carousel-counter">
-        {String(idx + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
-      </div>
-      <div className="carousel-arrows">
-        <button className="carousel-arrow prev" onClick={() => go(idx - 1)} aria-label="Sebelumnya">←</button>
-        <button className="carousel-arrow next" onClick={() => go(idx + 1)} aria-label="Berikutnya">→</button>
-      </div>
-      <div className="carousel-dots">
-        {images.map((_, i) =>
-        <button key={i} className={"carousel-dot" + (i === idx ? " active" : "")} onClick={() => setIdx(i)} aria-label={`Slide ${i + 1}`} />
-        )}
-      </div>
-    </div>);
-
+    </>
+  );
 }
 
 /* ========== Service Section (used on Beranda) ========== */
