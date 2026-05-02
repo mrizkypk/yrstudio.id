@@ -37,7 +37,10 @@ function ServicePage({ eyebrow, title, italic, lead, heroImage, portfolio, packa
                 <div className="num">{String(i+1).padStart(2,"0")}</div>
                 <div>
                   <div className="name">{p.name}</div>
-                  <div className="desc">{p.desc}</div>
+                  {Array.isArray(p.desc)
+                    ? <ul className="desc-list">{p.desc.map((d,j) => <li key={j}>{d}</li>)}</ul>
+                    : <div className="desc">{p.desc}</div>
+                  }
                 </div>
                 <div className="price">{p.price}</div>
               </div>
