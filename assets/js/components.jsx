@@ -260,7 +260,7 @@ function ServiceSection({ index, title, italic, description, specs, images, ctaH
         <div className="service-head">
           <div>
             {index && <span className="index">{index}</span>}
-            <h2>{title} <em>{italic}</em></h2>
+            <h2><a href={ctaHref} style={{textDecoration:"none",color:"inherit"}}>{title} <em>{italic}</em></a></h2>
           </div>
           <p>{description}</p>
         </div>
