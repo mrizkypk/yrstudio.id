@@ -111,7 +111,8 @@ p { margin: 0; text-wrap: pretty; }
 @media (max-width: 880px) {
   .nav-links, .nav-cta { display: none; }
   .nav-burger { display: inline-flex; }
-  .nav-inner { grid-template-columns: auto 1fr auto; }
+  .nav-inner { grid-template-columns: auto 1fr; }
+  .nav-burger { grid-column: 2; justify-self: end; }
 }
 
 .mobile-menu {
