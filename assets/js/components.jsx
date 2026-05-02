@@ -311,10 +311,11 @@ function BgmPlayer({ src }) {
     const start = () => {
       audio.src = src;
       audio.load();
-      audio.play().then(() => setReady(true)).catch(() => {
-        // autoplay blocked — show button, wait for first interaction
-        setReady(true);
-        const resume = () => { audio.play(); document.removeEventListener("click", resume); document.removeEventListener("touchstart", resume); document.removeEventListener("scroll", resume); };
+      setReady(true);
+      const tryPlay = () => audio.play().catch(() => {});
+      audio.play().catch(() => {
+        // autoplay blocked — wait for first interaction
+        const resume = () => { tryPlay(); };
         document.addEventListener("click", resume, { once: true });
         document.addEventListener("touchstart", resume, { once: true });
         document.addEventListener("scroll", resume, { once: true });
@@ -333,7 +334,7 @@ function BgmPlayer({ src }) {
   const toggle = () => {
     const audio = audioRef.current;
     if (!audio) return;
-    if (audio.paused) { audio.play(); setMuted(false); }
+    if (audio.paused) { audio.play().catch(() => {}); setMuted(false); }
     else { audio.pause(); setMuted(true); }
   };
 
