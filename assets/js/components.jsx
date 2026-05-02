@@ -30,8 +30,10 @@ function relPath(href, depth) {
 function Nav({ active, depth = 0 }) {
   const [open, setOpen] = useState(false);
   const brandSrc = depth === 0 ? "brand.jpg" : "../".repeat(depth) + "brand.jpg";
+  const bgmSrc = (depth === 0 ? "" : "../".repeat(depth)) + "assets/audio/bgm.mp3";
   return (
     <>
+      <BgmPlayer src={bgmSrc} />
       <nav className="nav">
         <div className="nav-inner">
           <a href={relPath("/", depth)} className="nav-brand" aria-label="YR Studio">
@@ -292,6 +294,69 @@ function Marquee({ items }) {
       </div>
     </div>);
 
+}
+
+/* ========== BGM Player ========== */
+function BgmPlayer({ src }) {
+  const audioRef = useRef(null);
+  const [muted, setMuted] = useState(false);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const audio = new Audio();
+    audio.loop = true;
+    audio.volume = 0.35;
+    audioRef.current = audio;
+
+    const start = () => {
+      audio.src = src;
+      audio.load();
+      audio.play().then(() => setReady(true)).catch(() => {
+        // autoplay blocked — show button, wait for first interaction
+        setReady(true);
+        const resume = () => { audio.play(); document.removeEventListener("click", resume); document.removeEventListener("touchstart", resume); };
+        document.addEventListener("click", resume, { once: true });
+        document.addEventListener("touchstart", resume, { once: true });
+      });
+    };
+
+    if (document.readyState === "complete") {
+      start();
+    } else {
+      window.addEventListener("load", start, { once: true });
+    }
+
+    return () => audio.pause();
+  }, [src]);
+
+  const toggle = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (audio.paused) { audio.play(); setMuted(false); }
+    else { audio.pause(); setMuted(true); }
+  };
+
+  if (!ready) return null;
+
+  return (
+    <button
+      onClick={toggle}
+      aria-label={muted ? "Putar musik" : "Matikan musik"}
+      style={{
+        position: "fixed", bottom: 24, right: 24, zIndex: 90,
+        width: 40, height: 40, borderRadius: "50%",
+        background: "var(--bg)", border: "1px solid var(--rule)",
+        display: "flex", alignItems: "center", justifyContent: "center",
+        cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+        transition: "opacity 0.2s", opacity: muted ? 0.5 : 1,
+      }}
+    >
+      {muted
+        ? <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        : <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+      }
+    </button>
+  );
 }
 
 /* ========== Reveal hook ========== */
