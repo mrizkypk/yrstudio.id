@@ -2,7 +2,7 @@
 
 const { useEffect: useEffectS } = React;
 
-function ServicePage({ index, eyebrow, title, italic, lead, heroImage, portfolio, packages, process, faq, ctaSubtitle, active }) {
+function ServicePage({ eyebrow, title, italic, lead, heroImage, portfolio, packages, process, faq, ctaSubtitle, active }) {
   useReveal();
   return (
     <>
@@ -10,7 +10,6 @@ function ServicePage({ index, eyebrow, title, italic, lead, heroImage, portfolio
 
       <section className="page-hero">
         <div className="container">
-          <div className="index">{index}</div>
           <span className="eyebrow" style={{display:"block", marginBottom: 16}}>{eyebrow}</span>
           <h1>{title} <em>{italic}</em></h1>
           <p className="lead">{lead}</p>

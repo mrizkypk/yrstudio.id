@@ -11,19 +11,19 @@ const FOTO_PORTFOLIO = [
 ];
 
 const VIDEO_PORTFOLIO = [
-  { src: "assets/portfolio/p04.jpg", alt: "Cinematic wedding" },
-  { src: "assets/portfolio/p06.jpg", alt: "Prewedding film" },
-  { src: "assets/portfolio/p10.jpg", alt: "Engagement reel" },
-  { src: "assets/portfolio/p02.jpg", alt: "Wedding film" },
-  { src: "assets/images/foto2.jpg", alt: "Cinematic frame" },
-  { src: "assets/images/foto3.jpg", alt: "Cinematic frame" },
+  { src: "assets/portfolio/p04.jpg", alt: "Video pernikahan sinematik" },
+  { src: "assets/portfolio/p06.jpg", alt: "Film prewedding" },
+  { src: "assets/portfolio/p10.jpg", alt: "Film lamaran" },
+  { src: "assets/portfolio/p02.jpg", alt: "Film pernikahan" },
+  { src: "assets/images/foto2.jpg", alt: "Adegan sinematik" },
+  { src: "assets/images/foto3.jpg", alt: "Adegan sinematik" },
 ];
 
 const DRONE_PORTFOLIO = [
-  { src: "assets/images/drone.jpg", alt: "Aerial Ngawi" },
-  { src: "assets/images/foto4.jpg", alt: "Aerial wedding venue" },
-  { src: "assets/portfolio/p06.jpg", alt: "Aerial cinematic" },
-  { src: "assets/images/foto1.jpg", alt: "Aerial portrait" },
+  { src: "assets/images/drone.jpg", alt: "Udara Ngawi" },
+  { src: "assets/images/foto4.jpg", alt: "Venue pernikahan dari udara" },
+  { src: "assets/portfolio/p06.jpg", alt: "Aerial sinematik" },
+  { src: "assets/images/foto1.jpg", alt: "Potret dari udara" },
 ];
 
 function useTweakState() {
@@ -62,7 +62,7 @@ function HeroSplit() {
         </div>
         <div className="hero-split-image">
           <img src="assets/portfolio/p01.jpg" alt="Karya YR Studio" />
-          <div className="hero-image-tag mono">N°01 · Wedding · Bukit Pinus, Ngawi</div>
+          <div className="hero-image-tag mono">Pernikahan · Bukit Pinus, Ngawi</div>
         </div>
       </div>
     </section>
@@ -75,7 +75,7 @@ function HeroEditorial() {
       <div className="container">
         <div className="hero-ed-grid">
           <div className="hero-ed-meta">
-            <span className="eyebrow">YR Studio — Est. 2020</span>
+            <span className="eyebrow">YR Studio — Berdiri 2020</span>
             <div className="hero-ed-loc mono">Ngawi · Jawa Timur · 63216</div>
           </div>
           <h1 className="hero-ed-display">
@@ -107,14 +107,14 @@ function HeroFullBleed() {
       <div className="container hero-full-content">
         <span className="eyebrow" style={{color:"color-mix(in oklab, var(--bg) 75%, transparent)"}}>YR Studio · Ngawi</span>
         <h1>
-          Sinematik. <em>Jujur.</em><br/>Untuk hari yang berarti.
+          Penuh rasa. <em>Jujur.</em><br/>Untuk hari yang berarti.
         </h1>
         <div style={{display:"flex", gap: 16, marginTop: 48, flexWrap:"wrap"}}>
           <a href={WA_LINK} className="btn btn-primary" style={{background:"var(--bg)", color:"var(--ink)"}} target="_blank" rel="noopener">Konsultasi via WA</a>
           <a href="#layanan" className="btn btn-ghost" style={{color:"var(--bg)", borderColor:"color-mix(in oklab, var(--bg) 50%, transparent)"}}>Lihat layanan ↓</a>
         </div>
       </div>
-      <div className="hero-full-tag mono">N°01 · Wedding archive · Ngawi 2024</div>
+      <div className="hero-full-tag mono">Arsip pernikahan · Ngawi 2024</div>
     </section>
   );
 }
@@ -167,7 +167,7 @@ function Beranda() {
       <ServiceSection
         title="Jasa"
         italic="Videografer."
-        description="Cinematic film yang menampilkan emosi, bukan sekadar urutan kejadian. Color grading dan scoring khas YR Studio."
+        description="Film yang menampilkan emosi, bukan sekadar urutan kejadian. Pewarnaan dan musik khas YR Studio."
         images={VIDEO_PORTFOLIO}
         carouselVariant={variant}
         ctaHref="/jasa-videografer-ngawi/"
@@ -176,7 +176,7 @@ function Beranda() {
           { label: "Resolusi", value: "4K · 24fps" },
           { label: "Durasi film", value: "3–8 menit" },
           { label: "Tim", value: "2 videografer" },
-          { label: "Output", value: "Cinematic + Reels" },
+          { label: "Output", value: "Film + Reels" },
         ]}
       />
 
