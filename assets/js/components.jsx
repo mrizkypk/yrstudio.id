@@ -314,9 +314,10 @@ function BgmPlayer({ src }) {
       audio.play().then(() => setReady(true)).catch(() => {
         // autoplay blocked — show button, wait for first interaction
         setReady(true);
-        const resume = () => { audio.play(); document.removeEventListener("click", resume); document.removeEventListener("touchstart", resume); };
+        const resume = () => { audio.play(); document.removeEventListener("click", resume); document.removeEventListener("touchstart", resume); document.removeEventListener("scroll", resume); };
         document.addEventListener("click", resume, { once: true });
         document.addEventListener("touchstart", resume, { once: true });
+        document.addEventListener("scroll", resume, { once: true });
       });
     };
 
