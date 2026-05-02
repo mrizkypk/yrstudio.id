@@ -80,16 +80,16 @@ function Footer({ depth = 0 }) {
           <div>
             <h4>Layanan</h4>
             <ul>
-              <li><a href={relPath("/jasa-fotografer/", depth)}>Jasa Fotografer</a></li>
-              <li><a href={relPath("/jasa-videografer/", depth)}>Jasa Videografer</a></li>
-              <li><a href={relPath("/sewa-drone/", depth)}>Sewa Drone</a></li>
+              <li><a href={relPath("/jasa-fotografer-ngawi/", depth)}>Jasa Fotografer</a></li>
+              <li><a href={relPath("/jasa-videografer-ngawi/", depth)}>Jasa Videografer</a></li>
+              <li><a href={relPath("/jasa-sewa-drone-ngawi/", depth)}>Sewa Drone</a></li>
             </ul>
           </div>
           <div>
             <h4>Studio</h4>
             <ul>
-              <li><a href={relPath("/tentang/", depth)}>Tentang Kami</a></li>
-              <li><a href={relPath("/kontak/", depth)}>Kontak</a></li>
+              <li><a href={relPath("/tentang-kami/", depth)}>Tentang Kami</a></li>
+              <li><a href={relPath("/kontak-kami/", depth)}>Kontak</a></li>
               <li><a href={`https://instagram.com/${IG}`} target="_blank" rel="noopener">Instagram</a></li>
             </ul>
           </div>
