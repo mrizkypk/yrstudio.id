@@ -2,11 +2,11 @@
 
 const { useState, useEffect, useRef, useCallback } = React;
 
-const WA = "6281215292767";
+const WA = "6285156962498";
 const WA_LINK = `https://wa.me/${WA}?text=${encodeURIComponent("Halo YR Studio, saya ingin tanya seputar layanan.")}`;
 const ADDRESS = "Balong Timur, Beran, Kec. Ngawi, Kabupaten Ngawi, Jawa Timur 63216";
 const EMAIL = "ucup.leader@gmail.com";
-const PHONE = "081215292767";
+const PHONE = "0851-5696-2498";
 const IG = "artrowcreative";
 
 const NAV_ITEMS = [
