@@ -61,9 +61,6 @@ function Nav({ active, depth = 0 }) {
         {NAV_ITEMS.map((it) =>
         <a key={it.key} href={relPath(it.href, depth)} onClick={() => setOpen(false)}>{it.label}</a>
         )}
-        <div style={{ marginTop: "auto", paddingTop: 32 }}>
-          <a href={WA_LINK} className="btn btn-primary" target="_blank" rel="noopener">Chat WhatsApp →</a>
-        </div>
       </div>
     </>);
 
