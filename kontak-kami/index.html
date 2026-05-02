@@ -1,236 +1,165 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="robots" content="max-image-preview:large">
-  <title>Kontak Kami – YR Studio</title>
-  <meta name="description" content="Hubungi YR Studio untuk kebutuhan jasa fotografer, videografer dan rental drone di Ngawi. Tersedia via WhatsApp, telepon, Instagram, dan email.">
-  <link rel="canonical" href="https://www.yrstudio.id/kontak-kami/">
-  <!-- Open Graph -->
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Kontak Kami – YR Studio">
-  <meta property="og:description" content="Hubungi YR Studio untuk kebutuhan jasa fotografer, videografer dan rental drone di Ngawi.">
-  <meta property="og:url" content="https://www.yrstudio.id/kontak-kami/">
-  <meta property="og:image" content="https://www.yrstudio.id/assets/images/kontak.jpg">
-  <meta property="og:site_name" content="YR Studio">
-  <meta property="og:locale" content="id_ID">
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kontak Kami – YR Studio">
-  <meta name="twitter:description" content="Hubungi YR Studio via WhatsApp, telepon, Instagram, atau email untuk jasa fotografer & videografer di Ngawi.">
-  <meta name="twitter:image" content="https://www.yrstudio.id/assets/images/kontak.jpg">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="../assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontak — YR Studio</title>
+<meta name="description" content="Hubungi YR Studio Ngawi via WhatsApp, email, atau Instagram. Konsultasi gratis tanpa komitmen.">
+<link rel="canonical" href="https://www.yrstudio.id/kontak-kami/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kontak — YR Studio">
+<meta property="og:description" content="Hubungi YR Studio Ngawi via WhatsApp, email, atau Instagram. Konsultasi gratis tanpa komitmen.">
+<meta property="og:url" content="https://www.yrstudio.id/kontak-kami/">
+<meta property="og:image" content="https://www.yrstudio.id/assets/images/manager.jpg">
+<meta property="og:site_name" content="YR Studio">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/site-extra.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="app"></div>
+<script type="text/babel" src="../assets/js/components.jsx"></script>
+<script type="text/babel" src="../assets/js/tweaks-panel.jsx"></script>
+<script type="text/babel" src="../assets/js/yr-tweaks.jsx"></script>
+<script type="text/babel">
+const { useState: uS } = React;
 
-<!-- Navbar -->
-<nav class="navbar" role="navigation" aria-label="Navigasi utama">
-  <div class="navbar-inner">
-    <a href="/" class="navbar-logo" aria-label="YR Studio - Beranda">
-      <span class="logo-name">YR Studio</span>
-      <span class="logo-tagline">Fotografer &amp; Videografer Sinematik</span>
-    </a>
-    <ul class="navbar-links">
-      <li><a href="/">Beranda</a></li>
-      <li><a href="/jasa-fotografer-ngawi/">Jasa Fotografer</a></li>
-      <li><a href="/jasa-videografer-ngawi/">Jasa Videografer</a></li>
-      <li><a href="/jasa-sewa-drone-ngawi/">Sewa Drone</a></li>
-      <li><a href="/tentang-kami/">Tentang Kami</a></li>
-      <li><a href="/kontak-kami/">Kontak</a></li>
-    </ul>
-    <a href="https://wa.me/6281215292767" class="btn-primary navbar-cta" target="_blank" rel="noopener">
-      <span>💬</span> Hubungi Kami
-    </a>
-    <button class="hamburger" id="hamburger" aria-label="Buka menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-nav" id="mobile-nav">
-  <a href="/">Beranda</a>
-  <a href="/jasa-fotografer-ngawi/">Jasa Fotografer</a>
-  <a href="/jasa-videografer-ngawi/">Jasa Videografer</a>
-  <a href="/jasa-sewa-drone-ngawi/">Sewa Drone</a>
-  <a href="/tentang-kami/">Tentang Kami</a>
-  <a href="/kontak-kami/">Kontak</a>
-  <div class="mobile-cta">
-    <a href="https://wa.me/6281215292767" class="btn-primary" target="_blank" rel="noopener">💬 Hubungi Kami</a>
-  </div>
-</div>
+function KontakPage() {
+  useReveal();
+  const [form, setForm] = uS({ name: "", phone: "", date: "", service: "Jasa Fotografer", message: "" });
+  const [sent, setSent] = uS(false);
 
-<!-- Page Hero -->
-<section class="page-hero hero-bg" aria-label="Kontak YR Studio">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="container" style="position:relative;z-index:1">
-    <img src="../assets/images/brand.jpg" alt="YR Studio" class="page-hero-brand">
-    <div class="hero-badge" style="display:inline-flex;margin-bottom:1.5rem">
-      <span>📞</span> Kontak Kami
-    </div>
-    <h1 class="page-hero-title">
-      Hubungi <span class="gradient-text">YR Studio</span>
-    </h1>
-    <p class="page-hero-desc">Konsultasi gratis, langsung respon. Siap bantu kebutuhan foto, video, dan drone kamu.</p>
-  </div>
-</section>
+  const update = (k) => (e) => setForm({...form, [k]: e.target.value});
+  const send = (e) => {
+    e.preventDefault();
+    const text = `Halo YR Studio!\n\nNama: ${form.name}\nWhatsApp: ${form.phone}\nTanggal acara: ${form.date}\nLayanan: ${form.service}\n\nPesan:\n${form.message}`;
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(text)}`, "_blank");
+    setSent(true);
+  };
 
-<!-- Intro -->
-<section class="section" aria-label="Informasi kontak">
-  <div class="container">
-    <div class="card fade-in" style="max-width:700px;margin:0 auto;padding:2rem;text-align:center">
-      <p style="font-size:1.05rem;line-height:1.8;color:var(--text-muted)">
-        Mau sewa <strong style="color:var(--text)">fotografer, videografer, atau drone</strong> buat pernikahan, lamaran, atau acara di Ngawi? Atau pengen <strong style="color:var(--text)">gabung komunitas kita?</strong> Pilih channel yang paling gampang buat kamu.
-      </p>
-    </div>
-  </div>
-</section>
+  return (
+    <>
+      <Nav active="kontak" depth={1} />
 
-<!-- Contact Methods -->
-<section class="section" style="padding-top:0" aria-label="Cara menghubungi kami">
-  <div class="container">
-    <div class="grid-2" style="max-width:800px;margin:0 auto">
-      <!-- WhatsApp -->
-      <a href="https://wa.me/6281215292767" target="_blank" rel="noopener" class="card contact-card fade-in fade-in-delay-1" style="text-decoration:none">
-        <div class="contact-icon wa">💬</div>
-        <div>
-          <p class="contact-label">WhatsApp</p>
-          <p class="contact-value">081215292767</p>
-          <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.25rem">Klik untuk chat langsung</p>
+      <section className="page-hero">
+        <div className="container">
+          <div className="index">N°05 — Kontak</div>
+          <span className="eyebrow" style={{display:"block", marginBottom: 16}}>Kami senang mendengar cerita kamu.</span>
+          <h1>Mari mulai <em>obrolan.</em></h1>
+          <p className="lead">Konsultasi gratis tanpa komitmen. Ceritakan acara, tanggal, dan referensi visual yang kamu suka — kami akan susun penawaran khusus dalam 1–2 hari kerja.</p>
         </div>
-      </a>
-      <!-- Telepon -->
-      <a href="tel:+6281215292767" class="card contact-card fade-in fade-in-delay-2" style="text-decoration:none">
-        <div class="contact-icon tel">📞</div>
-        <div>
-          <p class="contact-label">Telepon</p>
-          <p class="contact-value">081215292767</p>
-          <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.25rem">YR Studio</p>
-        </div>
-      </a>
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/artrowcreative/" target="_blank" rel="noopener" class="card contact-card fade-in fade-in-delay-3" style="text-decoration:none">
-        <div class="contact-icon ig">📸</div>
-        <div>
-          <p class="contact-label">Instagram</p>
-          <p class="contact-value">@artrowcreative</p>
-          <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.25rem">Follow &amp; DM kami</p>
-        </div>
-      </a>
-      <!-- Email -->
-      <a href="mailto:ucup.leader@gmail.com" class="card contact-card fade-in fade-in-delay-4" style="text-decoration:none">
-        <div class="contact-icon mail">📧</div>
-        <div>
-          <p class="contact-label">Email</p>
-          <p class="contact-value">ucup.leader@gmail.com</p>
-          <p style="font-size:0.8rem;color:var(--text-dim);margin-top:0.25rem">Kirim pesan ke kami</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+      </section>
 
-<!-- Alamat & Map -->
-<section class="section" style="padding-top:0" aria-label="Alamat dan peta lokasi YR Studio">
-  <div class="container">
-    <div class="fade-in" style="margin-bottom:2rem;text-align:center">
-      <span class="section-label">Alamat</span>
-      <h2 class="section-title">Lokasi Kami</h2>
-    </div>
-    <div class="grid-2" style="align-items:start">
-      <div class="card fade-in" style="padding:2rem">
-        <div class="card-icon">📍</div>
-        <h3 class="card-title">YR Studio</h3>
-        <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1.5rem">
-          Jalan Branjangan, Gang Merpati<br>
-          Beran, Ngawi<br>
-          Jawa Timur, Indonesia<br>
-          Kode Pos: 63216
-        </p>
-        <div style="display:flex;flex-direction:column;gap:0.75rem">
-          <a href="https://wa.me/6281215292767" class="btn-primary" target="_blank" rel="noopener" style="justify-content:center">
-            💬 WhatsApp Sekarang
-          </a>
-          <a href="https://maps.google.com/?q=Jl.+Branjangan,+Gang+Merpati,+Beran,+Ngawi,+Jawa+Timur" target="_blank" rel="noopener" class="btn-secondary" style="justify-content:center">
-            🗺️ Buka di Google Maps
-          </a>
+      <section className="section">
+        <div className="container">
+          <div className="reveal" style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap: 80, alignItems:"start"}}>
+            <div>
+              <span className="eyebrow">Form cepat</span>
+              <h3 style={{marginTop: 16, marginBottom: 40}}>Isi sebentar — terkirim langsung ke WhatsApp kami.</h3>
+              <form className="contact-form" onSubmit={send}>
+                <div>
+                  <label>Nama</label>
+                  <input required value={form.name} onChange={update("name")} placeholder="Nama panggilan" />
+                </div>
+                <div>
+                  <label>Nomor WhatsApp</label>
+                  <input required value={form.phone} onChange={update("phone")} placeholder="08xxxxxxxxxx" />
+                </div>
+                <div>
+                  <label>Tanggal acara</label>
+                  <input value={form.date} onChange={update("date")} placeholder="DD/MM/YYYY atau perkiraan" />
+                </div>
+                <div>
+                  <label>Layanan</label>
+                  <select value={form.service} onChange={update("service")}>
+                    <option>Jasa Fotografer</option>
+                    <option>Jasa Videografer</option>
+                    <option>Foto + Video Bundling</option>
+                    <option>Sewa Drone</option>
+                    <option>Konsultasi umum</option>
+                  </select>
+                </div>
+                <div className="full">
+                  <label>Cerita singkat</label>
+                  <textarea required value={form.message} onChange={update("message")} placeholder="Ceritakan acara, lokasi, dan referensi visual yang kamu suka." />
+                </div>
+                <div className="full">
+                  <button type="submit" className="btn btn-primary">Kirim via WhatsApp →</button>
+                  {sent && <span style={{marginLeft: 16, color:"var(--accent-ink)", fontSize: 13}}>✓ Terkirim — silakan kirim di WhatsApp</span>}
+                </div>
+              </form>
+            </div>
+
+            <div style={{display:"flex", flexDirection:"column", gap: 28}}>
+              <div>
+                <span className="eyebrow">Atau langsung</span>
+                <h3 style={{marginTop: 16}}>Pilih saluran <em>favorit</em> kamu.</h3>
+              </div>
+              <a href={WA_LINK} target="_blank" rel="noopener" className="contact-direct">
+                <div>
+                  <span className="eyebrow">WhatsApp</span>
+                  <div className="value">{PHONE}</div>
+                </div>
+                <span className="arr">→</span>
+              </a>
+              <a href={`mailto:${EMAIL}`} className="contact-direct">
+                <div>
+                  <span className="eyebrow">Email</span>
+                  <div className="value">{EMAIL}</div>
+                </div>
+                <span className="arr">→</span>
+              </a>
+              <a href={`https://instagram.com/${IG}`} target="_blank" rel="noopener" className="contact-direct">
+                <div>
+                  <span className="eyebrow">Instagram</span>
+                  <div className="value">@{IG}</div>
+                </div>
+                <span className="arr">→</span>
+              </a>
+              <a href={`tel:+${WA}`} className="contact-direct">
+                <div>
+                  <span className="eyebrow">Telepon</span>
+                  <div className="value">{PHONE}</div>
+                </div>
+                <span className="arr">→</span>
+              </a>
+              <div style={{marginTop: 24, padding: "24px 0", borderTop:"1px solid var(--rule)"}}>
+                <span className="eyebrow">Jam operasional</span>
+                <div style={{marginTop: 12, fontFamily:"var(--serif)", fontSize: 20}}>Senin – Sabtu · 09:00 – 21:00 WIB</div>
+                <p style={{color:"var(--muted)", fontSize: 14, marginTop: 8}}>Untuk hari Minggu kami sering shooting — pesan WhatsApp tetap akan dibalas hari kerja berikutnya.</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="fade-in fade-in-delay-1">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.8485!2d111.4580!3d-7.4061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79aBcdefabcdef%3A0xabcdef1234567890!2sJl.+Branjangan%2C+Ngawi!5e0!3m2!1sid!2sid!4v1234567890"
-          class="map-embed"
-          allowfullscreen=""
-          loading="lazy"
-          title="Lokasi YR Studio Ngawi"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
-<!-- Sign Off -->
-<section class="section-sm" style="text-align:center">
-  <div class="container">
-    <div class="fade-in">
-      <div class="card" style="max-width:400px;margin:0 auto;padding:2rem">
-        <img src="../assets/images/manager.jpg" alt="Yusuf Rachmawan - Manager YR Studio" style="width:80px;height:80px;border-radius:50%;object-fit:cover;margin:0 auto 1rem;border:2px solid rgba(168,85,247,0.4)">
-        <p style="font-size:1.25rem;font-weight:700;margin-bottom:0.25rem">Terima Kasih</p>
-        <p style="color:var(--text-muted);font-size:0.9rem">Yusuf Rachmawan, Manager YR Studio</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <ContactBlock />
+      <Footer depth={1} />
+      <YrTweaksPanel />
 
-<!-- Footer -->
-<footer class="footer" role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo-name">YR Studio</div>
-        <p class="footer-tagline">Fotografer &amp; Videografer Kekinian (Sinematik) di Ngawi, Jawa Timur.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/artrowcreative/" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
-          <a href="https://www.instagram.com/yrstudio.album/" target="_blank" rel="noopener" aria-label="Instagram Album">🎬</a>
-          <a href="https://wa.me/6281215292767" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
-        </div>
-      </div>
-      <div>
-        <p class="footer-heading">Layanan</p>
-        <ul class="footer-links">
-          <li><a href="/jasa-fotografer-ngawi/">Jasa Fotografer</a></li>
-          <li><a href="/jasa-videografer-ngawi/">Jasa Videografer</a></li>
-          <li><a href="/jasa-sewa-drone-ngawi/">Sewa Drone</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-heading">Informasi</p>
-        <ul class="footer-links">
-          <li><a href="/tentang-kami/">Tentang Kami</a></li>
-          <li><a href="/kontak-kami/">Kontak Kami</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-heading">Kontak</p>
-        <ul class="footer-contact-list">
-          <li><span class="icon">📞</span><span>081215292767</span></li>
-          <li><span class="icon">📧</span><span>ucup.leader@gmail.com</span></li>
-          <li><span class="icon">📍</span><span>Jl. Branjangan, Beran, Ngawi 63216</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 YR Studio. Semua hak dilindungi.</p>
-      <p>Dibuat dengan ❤️ oleh Yusuf Rachmawan</p>
-    </div>
-  </div>
-</footer>
-
-<button id="back-to-top" aria-label="Kembali ke atas">↑</button>
-<script src="../assets/js/main.js"></script>
+      <style>{`
+        .contact-direct {
+          display: flex; justify-content: space-between; align-items: end;
+          padding: 24px 0; border-top: 1px solid var(--rule);
+          transition: padding-left 0.3s;
+        }
+        .contact-direct:last-of-type { border-bottom: 1px solid var(--rule); }
+        .contact-direct:hover { padding-left: 12px; }
+        .contact-direct .value { font-family: var(--serif); font-size: clamp(22px, 2.4vw, 30px); margin-top: 6px; }
+        .contact-direct .arr { font-size: 22px; color: var(--muted); }
+        .contact-direct:hover .arr { color: var(--ink); }
+      `}</style>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("app")).render(<KontakPage />);
+</script>
 </body>
 </html>

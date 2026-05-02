@@ -1,210 +1,116 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="robots" content="max-image-preview:large">
-  <title>Tentang Kami – YR Studio</title>
-  <meta name="description" content="YR Studio adalah komunitas dan studio fotografi & videografi di Ngawi, Jawa Timur. Dikelola oleh Yusuf Rachmawan, tim muda berbakat siap melayani kebutuhanmu.">
-  <link rel="canonical" href="https://www.yrstudio.id/tentang-kami/">
-  <!-- Open Graph -->
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Tentang Kami – YR Studio">
-  <meta property="og:description" content="YR Studio adalah komunitas dan studio fotografi & videografi di Ngawi, Jawa Timur. Dikelola oleh Yusuf Rachmawan.">
-  <meta property="og:url" content="https://www.yrstudio.id/tentang-kami/">
-  <meta property="og:image" content="https://www.yrstudio.id/assets/images/manager.jpg">
-  <meta property="og:site_name" content="YR Studio">
-  <meta property="og:locale" content="id_ID">
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Tentang Kami – YR Studio">
-  <meta name="twitter:description" content="YR Studio adalah komunitas fotografer & videografer di Ngawi, Jawa Timur.">
-  <meta name="twitter:image" content="https://www.yrstudio.id/assets/images/manager.jpg">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="../assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tentang Kami — YR Studio</title>
+<meta name="description" content="YR Studio: komunitas fotografer & videografer dari Ngawi, Jawa Timur. Dikelola Yusuf Rachmawan.">
+<link rel="canonical" href="https://www.yrstudio.id/tentang-kami/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tentang Kami — YR Studio">
+<meta property="og:description" content="YR Studio: komunitas fotografer & videografer dari Ngawi, Jawa Timur. Dikelola Yusuf Rachmawan.">
+<meta property="og:url" content="https://www.yrstudio.id/tentang-kami/">
+<meta property="og:image" content="https://www.yrstudio.id/assets/images/manager.jpg">
+<meta property="og:site_name" content="YR Studio">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="stylesheet" href="../assets/css/site-extra.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="app"></div>
+<script type="text/babel" src="../assets/js/components.jsx"></script>
+<script type="text/babel" src="../assets/js/tweaks-panel.jsx"></script>
+<script type="text/babel" src="../assets/js/yr-tweaks.jsx"></script>
+<script type="text/babel">
+function TentangPage() {
+  useReveal();
+  return (
+    <>
+      <Nav active="tentang" depth={1} />
 
-<!-- Navbar -->
-<nav class="navbar" role="navigation" aria-label="Navigasi utama">
-  <div class="navbar-inner">
-    <a href="/" class="navbar-logo" aria-label="YR Studio - Beranda">
-      <span class="logo-name">YR Studio</span>
-      <span class="logo-tagline">Fotografer &amp; Videografer Sinematik</span>
-    </a>
-    <ul class="navbar-links">
-      <li><a href="/">Beranda</a></li>
-      <li><a href="/jasa-fotografer-ngawi/">Jasa Fotografer</a></li>
-      <li><a href="/jasa-videografer-ngawi/">Jasa Videografer</a></li>
-      <li><a href="/jasa-sewa-drone-ngawi/">Sewa Drone</a></li>
-      <li><a href="/tentang-kami/">Tentang Kami</a></li>
-      <li><a href="/kontak-kami/">Kontak</a></li>
-    </ul>
-    <a href="https://wa.me/6281215292767" class="btn-primary navbar-cta" target="_blank" rel="noopener">
-      <span>💬</span> Hubungi Kami
-    </a>
-    <button class="hamburger" id="hamburger" aria-label="Buka menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-nav" id="mobile-nav">
-  <a href="/">Beranda</a>
-  <a href="/jasa-fotografer-ngawi/">Jasa Fotografer</a>
-  <a href="/jasa-videografer-ngawi/">Jasa Videografer</a>
-  <a href="/jasa-sewa-drone-ngawi/">Sewa Drone</a>
-  <a href="/tentang-kami/">Tentang Kami</a>
-  <a href="/kontak-kami/">Kontak</a>
-  <div class="mobile-cta">
-    <a href="https://wa.me/6281215292767" class="btn-primary" target="_blank" rel="noopener">💬 Hubungi Kami</a>
-  </div>
-</div>
-
-<!-- Page Hero -->
-<section class="page-hero hero-bg" aria-label="Tentang YR Studio">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="container" style="position:relative;z-index:1">
-    <img src="../assets/images/brand.jpg" alt="YR Studio" class="page-hero-brand">
-    <div class="hero-badge" style="display:inline-flex;margin-bottom:1.5rem">
-      <span>👥</span> Tentang Kami
-    </div>
-    <h1 class="page-hero-title">
-      Mengenal <span class="gradient-text">YR Studio</span>
-    </h1>
-    <p class="page-hero-desc">Komunitas fotografer dan videografer berbakat dari Ngawi, Jawa Timur</p>
-  </div>
-</section>
-
-<!-- Profil Manager -->
-<section class="section" aria-label="Profil manager YR Studio">
-  <div class="container">
-    <div class="card manager-card fade-in">
-      <img src="../assets/images/manager.jpg" alt="Yusuf Rachmawan - Manager YR Studio" class="manager-photo">
-      <div>
-        <h2 class="manager-name">Yusuf Rachmawan</h2>
-        <p class="manager-role">📸 Fotografer · 🎬 Videografer · 🎮 YouTuber · Manager YR Studio</p>
-        <p class="manager-bio">
-          Halo! Saya Yusuf Rachmawan, fotografer, videografer, sekaligus youtuber gaming yang sekarang jadi manager YR Studio. Asli dari Ngawi, Jawa Timur, dan saat ini masih kuliah jurusan komunikasi di Universitas Muhammadiyah Surakarta.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Awal Mula -->
-<section class="section" style="padding-top:0" aria-label="Sejarah YR Studio">
-  <div class="container" style="max-width:800px">
-    <div class="card about-section-card fade-in">
-      <h2><span>🌱</span> Awal Mula</h2>
-      <p style="color:var(--text-muted);line-height:1.8">
-        Awalnya kita cuma komunitas kecil yang sering kerjain proyek bareng, mulai dari foto dan video pernikahan, lamaran, lomba, sampai berbagai acara lainnya.
-      </p>
-    </div>
-
-    <div class="card about-section-card fade-in fade-in-delay-1">
-      <h2><span>🎯</span> Tujuan Dibentuk</h2>
-      <p style="color:var(--text-muted);line-height:1.8">
-        Seiring waktu, kita pengen jadi wadah buat para fotografer dan videografer di Ngawi. Harapannya, komunitas ini bisa jadi tempat belajar bareng dan menyalurkan talenta muda yang berbakat di bidang foto dan video.
-      </p>
-    </div>
-
-    <div class="card about-section-card fade-in fade-in-delay-2">
-      <h2><span>📋</span> Sewa Jasa</h2>
-      <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem">
-        Butuh fotografer, videografer, atau sewa drone di Ngawi dan sekitarnya? Hubungi kita lewat:
-      </p>
-      <div style="display:flex;flex-direction:column;gap:0.75rem">
-        <a href="https://wa.me/6281215292767" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;color:var(--text-muted);transition:color 0.2s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-muted)'">
-          <span style="font-size:1.25rem">💬</span>
-          <span>WhatsApp: 081215292767</span>
-        </a>
-        <a href="tel:+6281215292767" style="display:flex;align-items:center;gap:0.75rem;color:var(--text-muted);transition:color 0.2s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-muted)'">
-          <span style="font-size:1.25rem">📞</span>
-          <span>HP: 081215292767</span>
-        </a>
-        <a href="https://www.instagram.com/artrowcreative/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.75rem;color:var(--text-muted);transition:color 0.2s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-muted)'">
-          <span style="font-size:1.25rem">📸</span>
-          <span>Instagram: @artrowcreative</span>
-        </a>
-        <a href="mailto:ucup.leader@gmail.com" style="display:flex;align-items:center;gap:0.75rem;color:var(--text-muted);transition:color 0.2s" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text-muted)'">
-          <span style="font-size:1.25rem">📧</span>
-          <span>Email: ucup.leader@gmail.com</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="card about-section-card fade-in fade-in-delay-3">
-      <h2><span>🤝</span> Cara Bergabung Di Komunitas</h2>
-      <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem">
-        Mau ikut belajar dan berkembang bareng kita?
-      </p>
-      <p style="color:var(--text-muted);line-height:1.8">
-        Follow Instagram kami di <a href="https://www.instagram.com/artrowcreative/" target="_blank" rel="noopener" style="color:#a855f7">@artrowcreative</a> dan kirim data dirimu via DM atau WhatsApp.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-card glass fade-in">
-    <p class="cta-title">Ingin Bekerjasama dengan YR Studio?</p>
-    <p class="cta-desc">Hubungi kami buat kebutuhan foto, video, atau kalau mau gabung ke komunitas kita.</p>
-    <div class="cta-buttons">
-      <a href="https://wa.me/6281215292767" class="btn-primary" target="_blank" rel="noopener">💬 Chat via WhatsApp</a>
-      <a href="/kontak-kami/" class="btn-secondary">Lihat Semua Kontak</a>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer" role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo-name">YR Studio</div>
-        <p class="footer-tagline">Fotografer &amp; Videografer Kekinian (Sinematik) di Ngawi, Jawa Timur.</p>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/artrowcreative/" target="_blank" rel="noopener" aria-label="Instagram">📸</a>
-          <a href="https://www.instagram.com/yrstudio.album/" target="_blank" rel="noopener" aria-label="Instagram Album">🎬</a>
-          <a href="https://wa.me/6281215292767" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+      <section className="page-hero">
+        <div className="container">
+          <div className="index">N°04 — Studio</div>
+          <span className="eyebrow" style={{display:"block", marginBottom: 16}}>Tentang YR Studio</span>
+          <h1>Komunitas <em>kreatif,</em><br/>dari Ngawi.</h1>
+          <p className="lead">Sejak 2020, YR Studio jadi rumah bagi fotografer & videografer muda yang bertumbuh bersama. Kami percaya momen tak terulang patut diabadikan dengan rasa, bukan sekadar prosedur.</p>
         </div>
-      </div>
-      <div>
-        <p class="footer-heading">Layanan</p>
-        <ul class="footer-links">
-          <li><a href="/jasa-fotografer-ngawi/">Jasa Fotografer</a></li>
-          <li><a href="/jasa-videografer-ngawi/">Jasa Videografer</a></li>
-          <li><a href="/jasa-sewa-drone-ngawi/">Sewa Drone</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-heading">Informasi</p>
-        <ul class="footer-links">
-          <li><a href="/tentang-kami/">Tentang Kami</a></li>
-          <li><a href="/kontak-kami/">Kontak Kami</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="footer-heading">Kontak</p>
-        <ul class="footer-contact-list">
-          <li><span class="icon">📞</span><span>081215292767</span></li>
-          <li><span class="icon">📧</span><span>ucup.leader@gmail.com</span></li>
-          <li><span class="icon">📍</span><span>Jl. Branjangan, Beran, Ngawi 63216</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 YR Studio. Semua hak dilindungi.</p>
-      <p>Dibuat dengan ❤️ oleh Yusuf Rachmawan</p>
-    </div>
-  </div>
-</footer>
+      </section>
 
-<button id="back-to-top" aria-label="Kembali ke atas">↑</button>
-<script src="../assets/js/main.js"></script>
+      <section className="section">
+        <div className="container">
+          <div className="manager reveal">
+            <div className="photo">
+              <img src="../assets/images/manager.jpg" alt="Yusuf Rachmawan" />
+            </div>
+            <div>
+              <span className="eyebrow">Manager · Founder</span>
+              <h2 style={{marginTop: 16}}>Yusuf<br/><em>Rachmawan.</em></h2>
+              <p style={{marginTop: 32, fontFamily: "var(--serif)", fontSize: 22, lineHeight: 1.55, color:"var(--ink-soft)"}}>
+                "Saya mulai memotret saat kuliah Komunikasi di UMS, dan sejak itu kamera nggak pernah lepas dari tangan. YR Studio lahir dari hobi yang dibagi bareng teman-teman Ngawi — sekarang jadi tempat kami melayani siapa pun yang ingin momennya tetap hidup setelah hari berlalu."
+              </p>
+              <div style={{marginTop: 32, display:"flex", gap: 28, flexWrap:"wrap", color:"var(--muted)", fontSize: 13}}>
+                <span>Fotografer</span>
+                <span>Videografer</span>
+                <span>Content Creator</span>
+                <span>Universitas Muhammadiyah Surakarta</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{paddingTop: 0}}>
+        <div className="container">
+          <div className="reveal" style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap: 80, paddingTop: 60, borderTop: "1px solid var(--rule)"}}>
+            <div>
+              <span className="eyebrow">Awal Mula</span>
+              <h3 style={{marginTop: 16}}>Lahir dari kerja bareng.</h3>
+            </div>
+            <p style={{fontFamily:"var(--serif)", fontSize: 20, lineHeight: 1.6, color:"var(--ink-soft)"}}>
+              Awalnya kami komunitas kecil yang sering kerjain proyek bareng — foto pernikahan, lamaran, lomba, sampai berbagai acara di Ngawi. Seiring waktu, ini berkembang jadi studio yang punya tim tetap, peralatan lengkap, dan ratusan klien.
+            </p>
+          </div>
+
+          <div className="reveal" style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap: 80, paddingTop: 60, marginTop: 60, borderTop: "1px solid var(--rule)"}}>
+            <div>
+              <span className="eyebrow">Tujuan</span>
+              <h3 style={{marginTop: 16}}>Wadah talenta muda.</h3>
+            </div>
+            <p style={{fontFamily:"var(--serif)", fontSize: 20, lineHeight: 1.6, color:"var(--ink-soft)"}}>
+              Kami ingin YR Studio jadi tempat fotografer & videografer muda di Ngawi belajar bareng — saling mengkurasi karya, mencoba alat baru, dan menemukan suaranya sendiri. Kalau kamu pemula yang ingin gabung, follow Instagram <a href="https://instagram.com/artrowcreative" target="_blank" rel="noopener" style={{borderBottom:"1px solid"}}>@artrowcreative</a> dan kirim DM.
+            </p>
+          </div>
+
+          <div className="reveal" style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap: 80, paddingTop: 60, marginTop: 60, borderTop: "1px solid var(--rule)"}}>
+            <div>
+              <span className="eyebrow">Filosofi</span>
+              <h3 style={{marginTop: 16}}>Sinematik tapi jujur.</h3>
+            </div>
+            <p style={{fontFamily:"var(--serif)", fontSize: 20, lineHeight: 1.6, color:"var(--ink-soft)"}}>
+              Estetika kami mengutamakan rasa — kami nggak suka pose yang kaku. Kami akan tetap mengarahkan, tapi yang kami cari adalah momen di antara arahan: tatapan yang spontan, tawa kecil, sentuhan yang tak terencana.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <Marquee items={["Cinematic ", "Honest ", "Editorial ", "Tim Muda ", "Berbasis Ngawi ", "Sejak 2020 "]} />
+
+      <WaCta />
+      <ContactBlock />
+      <Footer depth={1} />
+      <YrTweaksPanel />
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("app")).render(<TentangPage />);
+</script>
 </body>
 </html>
