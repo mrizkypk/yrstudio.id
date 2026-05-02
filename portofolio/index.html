@@ -51,7 +51,7 @@ function PortofolioPage() {
   useReveal();
   return (
     <>
-      <Nav active="home" depth={1} />
+      <Nav active="karya" depth={1} />
 
       <section className="page-hero">
         <div className="container">
@@ -73,23 +73,33 @@ function PortofolioPage() {
           <span className="eyebrow" style={{display:"block", marginBottom: 32}}>Video</span>
           <div style={{display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(480px, 100%), 1fr))", gap: 20}}>
             {[
-              { id: "1UpCKO-RRT0", title: "Lek Dahlan - Sarangan Nitip Kenangan" },
-              { id: "gJZE_x2byBU", title: "Lek Dahlan - Sedelo Maneh" },
-              { id: "DxgRJbjJ2Jk", title: "Java Kerta - Aku Wis Lilo" },
-              { id: "t2D0LdOoWMw", title: "Pujaan Hatiku - Andiena & Anisa" },
-              { id: "hrRFXiwXsOk", title: "Kalah Modal - Eko Widodo" },
-              { id: "UdMJkDEIj8w", title: "Janji Palsu - Anisa Nur M" },
-            ].map((v) => (
-              <div key={v.id} style={{position:"relative", aspectRatio:"16/9", background:"var(--bg-2)"}}>
-                <iframe
-                  src={`https://www.youtube.com/embed/${v.id}`}
-                  title={v.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                  style={{position:"absolute", inset:0, width:"100%", height:"100%", border:0}}
-                />
-              </div>
+              "artrow.creative_reel_11_28_2023_9_36_30 PM3246072870900023929.mp4",
+              "artrow.creative_reel_2_1_2026_12_23_31 PM3822716708776137628.mp4",
+              "artrow.creative_reel_6_10_2024_10_44_07 AM3387074197438461559.mp4",
+              "artrow.creative_reel_6_9_2024_9_33_30 AM3386314717588140057.mp4",
+              "artrow.creative_reel_9_15_2025_6_50_38 AM3721805164119437408.mp4",
+              "zaiyana_nur_reel_10_20_2025_12_27_28 PM3747337412029966932.mp4",
+            ].map((f) => (
+              <video key={f} controls preload="metadata" style={{width:"100%", aspectRatio:"16/9", background:"var(--bg-2)", display:"block"}}>
+                <source src={`video/${encodeURIComponent(f)}`} type="video/mp4" />
+              </video>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section" style={{paddingTop: 0}}>
+        <div className="container reveal">
+          <span className="eyebrow" style={{display:"block", marginBottom: 32}}>Drone</span>
+          <div style={{display:"grid", gridTemplateColumns:"repeat(auto-fit, minmax(min(480px, 100%), 1fr))", gap: 20}}>
+            {[
+              "artrow.creative_post_7_14_2021_2_08_18 PM2617464776510460509.mp4",
+              "artrow.creative_reel_2_7_2023_7_20_03 AM3032550209780598062.mp4",
+              "artrow.creative_reel_8_24_2022_10_55_14 AM2911627033673150708.mp4",
+            ].map((f) => (
+              <video key={f} controls preload="metadata" style={{width:"100%", aspectRatio:"16/9", background:"var(--bg-2)", display:"block"}}>
+                <source src={`drone/${encodeURIComponent(f)}`} type="video/mp4" />
+              </video>
             ))}
           </div>
         </div>

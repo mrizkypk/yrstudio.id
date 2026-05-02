@@ -14,6 +14,7 @@ const NAV_ITEMS = [
 { href: "/jasa-fotografer-ngawi/", label: "Jasa Fotografer", key: "foto" },
 { href: "/jasa-videografer-ngawi/", label: "Jasa Videografer", key: "video" },
 { href: "/jasa-sewa-drone-ngawi/", label: "Sewa Drone", key: "drone" },
+{ href: "/portofolio/", label: "Karya Kami", key: "karya" },
 { href: "/tentang-kami/", label: "Tentang Kami", key: "tentang" },
 { href: "/kontak-kami/", label: "Kontak", key: "kontak" }];
 
